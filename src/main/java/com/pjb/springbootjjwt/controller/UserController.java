@@ -33,14 +33,7 @@ public class UserController {
      */
     @PostMapping("/login")
     public ResultDTO login( User user){
-
-        String token = userService.login(user.getUsername(), user.getPassword());
-        if (token == null) {
-            return ResultDTO.failure(new ResultError(UserError.PASSWORD_OR_NAME_IS_ERROR));
-        }
-        Map<String, String> tokenMap = new HashMap<>();
-        tokenMap.put("token", token);
-        return ResultDTO.success(tokenMap);
+        return userService.login(user.getUsername(), user.getPassword());
     }
 
     @TokenRequired

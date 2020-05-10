@@ -12,7 +12,11 @@ public enum UserError {
     EMP_IS_EXIT("40005","人员已存在"),
     EMP_IS_NOT_OPENED("40006","您的账号已被禁用，暂无法登录"),
     TOKEN_IS_VERITYED("40007","无效的令牌"),
-    TOKEN_IS_NOT_EXIT("40007","令牌不存在")
+    TOKEN_IS_NOT_EXIT("40007","令牌不存在"),
+    TOKEN_IS_EXPIRED("40008","令牌已过期"),
+
+    NONE_TOKEN("00001", "无token,请重新登录"),
+    TOKEN_CHECK_ERROR("00002", "token校验失败")
     ;
     String errorCode;
     String errorMessage;
